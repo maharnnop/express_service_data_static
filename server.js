@@ -11,7 +11,7 @@ const cors = require("cors");
 
 
 const app = express();
-const port = process.env.PORT;
+const port = process.env.PORT ;
 
 
 //middleware-every request goes through it
@@ -25,6 +25,9 @@ app.use(methodOverride("_method"));
 const routes = require("./routes");
 
 app.use("/", routes.system);
+app.use("/provinces", routes.provinces);
+app.use("/amphurs", routes.amphurs);
+app.use("/tambons", routes.tambons);
 
 // const morgan = require('morgan');
 //
