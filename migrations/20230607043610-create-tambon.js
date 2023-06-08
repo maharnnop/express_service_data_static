@@ -39,7 +39,9 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE
       }
-    });
+    }, {
+      schema: 'static_data',
+  });
   },
   async down(queryInterface, Sequelize) {
     await queryInterface.dropTable('Tambons');

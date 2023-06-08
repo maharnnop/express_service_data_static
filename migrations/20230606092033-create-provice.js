@@ -2,6 +2,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
+    await queryInterface.createSchema("static_data");
     await queryInterface.createTable('provinces', {
       id: {
         allowNull: false,
@@ -30,7 +31,9 @@ module.exports = {
         defaultValue: new Date(),
         type: Sequelize.DATE
       }
-    });
+    }, {
+      schema: 'static_data',
+  });
   },
   async down(queryInterface, Sequelize) {
     await queryInterface.dropTable('provinces');

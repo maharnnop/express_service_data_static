@@ -27,7 +27,7 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
-    await queryInterface.bulkInsert("Amphurs",arr,{});
+    await queryInterface.bulkInsert({ tableName: "Amphurs", schema: 'static_data' },arr,{});
   },
 
   async down (queryInterface, Sequelize) {
@@ -37,6 +37,6 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-    await queryInterface.bulkDelete("Amphurs", null, {});
+    await queryInterface.bulkDelete({ tableName: "Amphurs", schema: 'static_data' }, null, {});
   }
 };

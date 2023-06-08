@@ -28,12 +28,16 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
-    await queryInterface.bulkInsert("provinces",arr,{});
+    await queryInterface.bulkInsert(
+      { tableName: 'provinces', schema: 'static_data' },arr,{}
+      );
 
   },
 
   async down (queryInterface, Sequelize) {
-    await queryInterface.bulkDelete("provinces", null, {});
+    await queryInterface.bulkDelete(
+      { tableName: 'provinces', schema: 'static_data' },arr,{}
+      );
     /**
      * Add commands to revert seed here.
      *
