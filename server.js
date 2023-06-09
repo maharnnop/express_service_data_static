@@ -38,7 +38,7 @@ app.use("/provinces", routes.provinces);
 app.use("/amphurs", routes.amphurs);
 app.use("/tambons", routes.tambons);
 app.use("/titles", routes.titles);
-app.use("/sendmail", routes.sendmail);
+// app.use("/sendmail", routes.sendmail);
 
 // const morgan = require('morgan');
 //
