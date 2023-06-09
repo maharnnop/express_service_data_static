@@ -22,6 +22,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Tambon',
+    schema: 'static_data'
   });
   return Tambon;
 };

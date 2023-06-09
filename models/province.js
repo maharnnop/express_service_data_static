@@ -20,6 +20,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'province',
+    schema: 'static_data'
   });
   return province;
 };

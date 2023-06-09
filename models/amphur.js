@@ -21,6 +21,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Amphur',
+    schema: 'static_data'
   });
   return Amphur;
 };

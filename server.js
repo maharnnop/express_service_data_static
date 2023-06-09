@@ -7,8 +7,8 @@ const methodOverride = require("method-override");
 const bodyParser = require("body-parser").json();
 const jwt = require("jsonwebtoken");
 const cookieParser = require("cookie-parser");
+const nodemailer = require('nodemailer');
 const cors = require("cors");
-
 
 const app = express();
 const port = process.env.PORT ;
@@ -22,12 +22,23 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 
+const transporter = nodemailer.createTransport({
+    host: 'smtp.gmail.com',
+    port: 587,
+    secure: false, // true for 465, false for other ports
+    auth: { // ข้อมูลการเข้าสู่ระบบ
+      user: 'kwanmhn@gmail.com', // email user ของเรา
+      pass: 'lxgjroepchqevxcv' // email password
+    }
+   });
 const routes = require("./routes");
 
 app.use("/", routes.system);
 app.use("/provinces", routes.provinces);
 app.use("/amphurs", routes.amphurs);
 app.use("/tambons", routes.tambons);
+app.use("/titles", routes.titles);
+app.use("/sendmail", routes.sendmail);
 
 // const morgan = require('morgan');
 //
