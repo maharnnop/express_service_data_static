@@ -34,10 +34,10 @@ const transporter = nodemailer.createTransport({
 const routes = require("./routes");
 
 app.use("/", routes.system);
-app.use("/provinces", routes.provinces);
-app.use("/amphurs", routes.amphurs);
-app.use("/tambons", routes.tambons);
-app.use("/titles", routes.titles);
+app.use("/v1/static/provinces", routes.provinces);
+app.use("/v1/static/amphurs", routes.amphurs);
+app.use("/v1/static/tambons", routes.tambons);
+app.use("/v1/static/titles", routes.titles);
 // app.use("/sendmail", routes.sendmail);
 
 // const morgan = require('morgan');
